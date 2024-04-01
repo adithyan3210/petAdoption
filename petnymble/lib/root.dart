@@ -51,7 +51,7 @@ class _RootScreenState extends State<RootScreen> {
             selectedIcon: Icon(IconlyBold.home),
             label: "Home",
           ),
-          const NavigationDestination(
+          NavigationDestination(
             icon: Icon(IconlyLight.search),
             selectedIcon: Icon(IconlyBold.search),
             label: "Search",

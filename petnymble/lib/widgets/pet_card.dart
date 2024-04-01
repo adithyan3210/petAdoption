@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:petnymble/widgets/pet_hero_image.dart';
 import 'package:petnymble/model/pet_model.dart';
-import 'package:petnymble/screens/details_screen.dart';
+import 'package:petnymble/screens/adoption_screen.dart';
 
 class PetCard extends StatefulWidget {
   final PetModel pet;
@@ -24,7 +24,8 @@ class _PetCardState extends State<PetCard> {
       padding: const EdgeInsets.only(right: 20.0),
       child: SizedBox(
         width: size.width * 0.50,
-        child: Column(mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             GestureDetector(
@@ -33,8 +34,7 @@ class _PetCardState extends State<PetCard> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>
-                              AdoptingScreen(pet: widget.pet),
+                          builder: (context) => AdoptingScreen(pet: widget.pet),
                         ),
                       );
                     }
@@ -81,10 +81,11 @@ class _PetCardState extends State<PetCard> {
             ),
             SizedBox(
               child: widget.pet.isAvailable
-                  ? Row(mainAxisAlignment: MainAxisAlignment.center,
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const CircleAvatar(
-                          backgroundColor: Color(0xff03B680),
+                          backgroundColor: Colors.green,
                           radius: 4,
                         ),
                         SizedBox(
@@ -93,7 +94,7 @@ class _PetCardState extends State<PetCard> {
                         Text(
                           "Available",
                           style: TextStyle(
-                            color: const Color(0xff03B680),
+                            color: Colors.green,
                             fontSize: size.width * 0.031,
                             fontWeight: FontWeight.w600,
                           ),

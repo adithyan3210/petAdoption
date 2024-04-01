@@ -10,7 +10,7 @@ class IntroScreen extends StatelessWidget {
     return Scaffold(
         body: Container(
           height: double.infinity,width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(fit: BoxFit.fill,
           image: NetworkImage(
               'https://images.unsplash.com/photo-1623410439349-c8b831666e8b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D'),

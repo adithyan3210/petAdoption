@@ -114,14 +114,14 @@ class _HomePageState extends State<HomePage>
               ),
               TabBar(labelColor: Colors.orange,
                 controller: _tabController,
-                tabs: [
+                tabs: const [
                   Tab(text: 'DOG'),
                   Tab(text: 'CAT'),
                   Tab(text: 'BIRDS'),
                   Tab(text: 'FISH'),
                 ],
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               SizedBox(
                 height: size.height - 250,
                 child: TabBarView(

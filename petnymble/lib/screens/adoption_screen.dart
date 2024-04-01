@@ -52,67 +52,67 @@ class _BuyScreenState extends State<AdoptingScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(
-                            top: 20,
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                width: size.width,
-                                height: size.height * 0.3,
-                                decoration: BoxDecoration(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary,
-                                  borderRadius: BorderRadius.circular(14),
+                            padding: const EdgeInsets.only(
+                              top: 20,
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width: size.width,
+                                  height: size.height * 0.3,
+                                  decoration: BoxDecoration(
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
+                                    borderRadius: BorderRadius.circular(14),
+                                  ),
+                                  child: PetHero(
+                                    image: widget.pet.image,
+                                  ),
                                 ),
-                                child: PetHero(
-                                  image: widget.pet.image,
-                                ),
-                              ),
-                              SizedBox(
-                                width: size.width,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    SizedBox(
-                                      height: size.height * 0.015,
-                                    ),
-                                    Text(
-                                      "About Me${widget.pet.name}",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: size.width * 0.080,
+                                SizedBox(
+                                  width: size.width,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      SizedBox(
+                                        height: size.height * 0.015,
                                       ),
-                                    ),
-                                    SizedBox(
-                                      height: size.height * 0.010,
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        const Text("Name"),
-                                        Text(widget.pet.name),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: size.height * 0.005, // Reduced height
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        const Text("Age"),
-                                        Text("${widget.pet.age} years")
-                                      ],
-                                    ),
-                                  ],
+                                      Text(
+                                        "About Me${widget.pet.name}",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: size.width * 0.080,
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: size.height * 0.010,
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          const Text("Name"),
+                                          Text(widget.pet.name),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: size.height * 0.005,
+                                      ),
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          const Text("Age"),
+                                          Text("${widget.pet.age} years")
+                                        ],
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
+                              ],
+                            )),
                       ],
                     )),
               ),
@@ -131,14 +131,14 @@ class _BuyScreenState extends State<AdoptingScreen> {
                         ),
                       ),
                       Text(
-                        "\Rs ${widget.pet.price}",
+                        "Rs ${widget.pet.price}",
                         style: const TextStyle(
                           fontWeight: FontWeight.w500,
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 8), // Reduced height
+                  const SizedBox(height: 8),
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -164,9 +164,7 @@ class _BuyScreenState extends State<AdoptingScreen> {
                       height: size.height * 0.070,
                       child: ElevatedButton(
                         onPressed: () {
-                          context
-                              .read<HistoryProvider>()
-                              .addToCart(widget.pet);
+                          context.read<HistoryProvider>().addToCart(widget.pet);
                           context.read<PetProvider>().buyItem(widget.pet);
                           showDialog(
                             context: context,

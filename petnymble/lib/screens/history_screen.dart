@@ -76,7 +76,7 @@ class _HistoryScreenState extends State<AdoptedHistoryScreen> {
                               SizedBox(
                                 height: size.height * 0.020,
                               ),
-                              Text(
+                              const Text(
                                 "Your Adopt is empty!",
                                 style: TextStyle(
                                   color: Colors.grey,

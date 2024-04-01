@@ -47,7 +47,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 showSearchResults = value.isNotEmpty;
               });
             },
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               hintText: 'Search Pets',
               border: InputBorder.none,
               prefixIcon: Icon(Icons.search),
